@@ -41,6 +41,7 @@ restore_cache_directories() {
   local build_dir=${1:-}
   local cache_dir=${2:-}
 
+echo "build_dir is $build_dir cache_dir is $cache_dir and loop on ${@:3}"
   for cachepath in ${@:3}; do
     if [ -e "$build_dir/$cachepath" ]; then
       echo "- $cachepath (exists - skipping)"
