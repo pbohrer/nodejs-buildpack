@@ -17,7 +17,7 @@ ENV_DIR=${3:-}
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 $BP_DIR/compile-extensions/bin/check_stack_support
 
-echo "Build ($1) Cache ($2) Env ($3) BP_DIR ($BP_DIR)"
+echo "Build ($BUILD_DIR) Cache ($CACHE_DIR) Env ($ENV_DIR) BP_DIR ($BP_DIR)"
 
 mkdir -p "$BUILD_DIR/.heroku/node/"
 cd $BUILD_DIR
