@@ -28,7 +28,7 @@ install_nodejs() {
   local download_url=`translate_dependency_url $heroku_url`
   local filtered_url=`filter_dependency_url $download_url`
   curl "$download_url" --silent --fail --retry 5 --retry-max-time 15 -o /tmp/node.tar.gz || (>&2 $BP_DIR/compile-extensions/bin/recommend_dependency $heroku_url && false)
-  echo "Downloaded [$filtered_url]"
+  echo "Downloaded [$filtered_url] putting in $dir"
   tar xzf /tmp/node.tar.gz -C /tmp
   rm -rf $dir/*
   mv /tmp/node-v$resolved_version-$os-$cpu/* $dir
